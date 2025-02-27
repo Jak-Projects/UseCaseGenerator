@@ -1,0 +1,311 @@
+﻿<Window x:Class="UseCaseGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UseCaseGenerator.ViewModel"
+        mc:Ignorable="d"
+        Title="Use Case Generator" Height="882" Width="800">
+    <Window.DataContext>
+        <local:MainViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="10"> <!-- Leftboxes -->
+            <TextBox Text="{Binding UseCase.IdTitle, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="5">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="ToolTip" Value="Unique identifier and title of the use case" />
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="True">
+                                <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent, FallbackValue='Validation error occurred'}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <AdornedElementPlaceholder />
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <Label Content="Use Case ID &amp; Title" FontSize="10"/>
+
+            <TextBox Text="{Binding UseCase.Intent, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="5">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="ToolTip" Value="Purpose and goals of the use case" />
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="True">
+                                <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent, FallbackValue='Validation error occurred'}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <AdornedElementPlaceholder />
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <Label Content="Intent" FontSize="10"/>
+
+            <TextBox Text="{Binding UseCase.ScopeLevel, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="5">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="ToolTip" Value="Boundaries and abstraction level" />
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="True">
+                                <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent, FallbackValue='Validation error occurred'}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <AdornedElementPlaceholder />
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <Label Content="Scope &amp; Level" FontSize="10"/>
+
+            <TextBox Text="{Binding UseCase.AuthorLastUpdate, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="5">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="ToolTip" Value="Author and last update date" />
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="True">
+                                <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent, FallbackValue='Validation error occurred'}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <AdornedElementPlaceholder />
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <Label Content="Author &amp; Last Update" FontSize="10"/>
+
+            <TextBox Text="{Binding UseCase.Status, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="5">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="ToolTip" Value="Current state (e.g., Finalized&amp; In Progress)" />
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="True">
+                                <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent, FallbackValue='Validation error occurred'}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <AdornedElementPlaceholder />
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <Label Content="Status" FontSize="10"/>
+
+            <TextBox Text="{Binding UseCase.PrimaryActors, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="5">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="ToolTip" Value="Main participants" />
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="True">
+                                <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent, FallbackValue='Validation error occurred'}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <AdornedElementPlaceholder />
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <Label Content="Primary Actors" FontSize="10"/>
+
+            <TextBox Text="{Binding UseCase.SecondaryActors, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="5">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="ToolTip" Value="Supporting roles" />
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="True">
+                                <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent, FallbackValue='Validation error occurred'}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <AdornedElementPlaceholder />
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <Label Content="Secondary Actors" FontSize="10"/>
+
+            <TextBox Text="{Binding UseCase.Preconditions, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="5">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="ToolTip" Value="Conditions true before execution" />
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="True">
+                                <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent, FallbackValue='Validation error occurred'}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <AdornedElementPlaceholder />
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <Label Content="Preconditions" FontSize="10"/>
+
+            <TextBox Text="{Binding UseCase.DynamicPreconditions, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="5">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="ToolTip" Value="Conditions that might change during execution" />
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="True">
+                                <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent, FallbackValue='Validation error occurred'}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <AdornedElementPlaceholder />
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <Label Content="Dynamic Preconditions" FontSize="10"/>
+
+            <TextBox Text="{Binding UseCase.Assumptions, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="5">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="ToolTip" Value="Underlying assumptions" />
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="True">
+                                <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent, FallbackValue='Validation error occurred'}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <AdornedElementPlaceholder />
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <Label Content="Assumptions" FontSize="10"/>
+
+            <TextBox Text="{Binding UseCase.SuccessPostCondition, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="5">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="ToolTip" Value="State after successful execution" />
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="True">
+                                <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent, FallbackValue='Validation error occurred'}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <AdornedElementPlaceholder />
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <Label Content="Success Post Condition" FontSize="10"/>
+
+            <TextBox Text="{Binding UseCase.FailureCondition, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="5">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="ToolTip" Value="State if execution fails" />
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="True">
+                                <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent, FallbackValue='Validation error occurred'}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <AdornedElementPlaceholder />
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <Label Content="Failure Condition" FontSize="10"/>
+
+            <TextBox Text="{Binding UseCase.Trigger, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="5">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="ToolTip" Value="Event that starts the use case" />
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="True">
+                                <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent, FallbackValue='Validation error occurred'}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <AdornedElementPlaceholder />
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <Label Content="Trigger" FontSize="10"/>
+
+            <TextBox Text="{Binding UseCase.Operations, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="5">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="ToolTip" Value="Steps or processes involved" />
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="True">
+                                <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent, FallbackValue='Validation error occurred'}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <AdornedElementPlaceholder />
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <Label Content="Operations" FontSize="10"/>
+
+            <TextBox Text="{Binding UseCase.OperationsConcepts, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="5">
+                <TextBox.Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="ToolTip" Value="Principles or methods for the steps" />
+                        <Style.Triggers>
+                            <Trigger Property="Validation.HasError" Value="True">
+                                <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent, FallbackValue='Validation error occurred'}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+                <Validation.ErrorTemplate>
+                    <ControlTemplate>
+                        <AdornedElementPlaceholder />
+                    </ControlTemplate>
+                </Validation.ErrorTemplate>
+            </TextBox>
+            <Label Content="Operations Concepts" FontSize="10"/>
+
+            <Button Content="Save as PDF" Margin="5" Click="SaveAsPdf_Click" Width="100" Height="30"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Column="1" Margin="10">
+            <TextBlock Text="{Binding NarrativePreview}" TextWrapping="Wrap" FontSize="12" Background="#F0F0F0" Padding="5"/>
+        </ScrollViewer>
+    </Grid>
+</Window>
