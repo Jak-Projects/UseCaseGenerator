@@ -46,7 +46,7 @@ namespace UseCaseGenerator.Model
 
         public string GenerateNarrative()
         {
-            return $"Use Case: {IdTitle}\n\n" +
+            return $"Use Case ID & Title: {IdTitle}\n" +
                    $"Intent: {Intent}\n" +
                    $"Scope & Level: {ScopeLevel}\n" +
                    $"Author & Last Update: {AuthorLastUpdate}\n" +
@@ -62,6 +62,7 @@ namespace UseCaseGenerator.Model
                    $"Operations: {Operations}\n" +
                    $"Operations Concepts: {OperationsConcepts}";
         }
+
 
         public string this[string columnName]
         {

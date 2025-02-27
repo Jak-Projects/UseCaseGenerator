@@ -305,7 +305,120 @@
         </StackPanel>
 
         <ScrollViewer Grid.Column="1" Margin="10">
-            <TextBlock Text="{Binding NarrativePreview}" TextWrapping="Wrap" FontSize="12" Background="#F0F0F0" Padding="5"/>
+            <TextBlock
+        TextWrapping="Wrap"
+        FontSize="14"
+        FontFamily="Segoe UI"
+        Foreground="DarkSlateGray"
+        Background="#F0F0F0"
+        Padding="10"
+        TextAlignment="Justify">
+ <!-- Right side style (Non-PDF)-->
+        <Run Text="Use Case ID &amp; Title: "
+             FontWeight="Bold"
+             TextDecorations="Underline"/>
+        <Run Text="{Binding UseCase.IdTitle}" />
+        <LineBreak />
+        <LineBreak />
+
+        <Run Text="Intent: "
+             FontWeight="Bold"
+             TextDecorations="Underline"/>
+        <Run Text="{Binding UseCase.Intent}" />
+        <LineBreak />
+        <LineBreak />
+
+        <Run Text="Scope &amp; Level: "
+             FontWeight="Bold"
+             TextDecorations="Underline"/>
+        <Run Text="{Binding UseCase.ScopeLevel}" />
+        <LineBreak />
+        <LineBreak />
+
+        <Run Text="Author &amp; Last Update: "
+             FontWeight="Bold"
+             TextDecorations="Underline"/>
+        <Run Text="{Binding UseCase.AuthorLastUpdate}" />
+        <LineBreak />
+        <LineBreak />
+
+        <Run Text="Status: "
+             FontWeight="Bold"
+             TextDecorations="Underline"/>
+        <Run Text="{Binding UseCase.Status}" />
+        <LineBreak />
+        <LineBreak />
+
+        <Run Text="Primary Actors: "
+             FontWeight="Bold"
+             TextDecorations="Underline"/>
+        <Run Text="{Binding UseCase.PrimaryActors}" />
+        <LineBreak />
+        <LineBreak />
+
+        <Run Text="Secondary Actors: "
+             FontWeight="Bold"
+             TextDecorations="Underline"/>
+        <Run Text="{Binding UseCase.SecondaryActors}" />
+        <LineBreak />
+        <LineBreak />
+
+        <Run Text="Preconditions: "
+             FontWeight="Bold"
+             TextDecorations="Underline"/>
+        <Run Text="{Binding UseCase.Preconditions}" />
+        <LineBreak />
+        <LineBreak />
+
+        <Run Text="Dynamic Preconditions: "
+             FontWeight="Bold"
+             TextDecorations="Underline"/>
+        <Run Text="{Binding UseCase.DynamicPreconditions}" />
+        <LineBreak />
+        <LineBreak />
+
+        <Run Text="Assumptions: "
+             FontWeight="Bold"
+             TextDecorations="Underline"/>
+        <Run Text="{Binding UseCase.Assumptions}" />
+        <LineBreak />
+        <LineBreak />
+
+        <Run Text="Success Post Condition: "
+             FontWeight="Bold"
+             TextDecorations="Underline"/>
+        <Run Text="{Binding UseCase.SuccessPostCondition}" />
+        <LineBreak />
+        <LineBreak />
+
+        <Run Text="Failure Condition: "
+             FontWeight="Bold"
+             TextDecorations="Underline"/>
+        <Run Text="{Binding UseCase.FailureCondition}" />
+        <LineBreak />
+        <LineBreak />
+
+        <Run Text="Trigger: "
+             FontWeight="Bold"
+             TextDecorations="Underline"/>
+        <Run Text="{Binding UseCase.Trigger}" />
+        <LineBreak />
+        <LineBreak />
+
+        <Run Text="Operations: "
+             FontWeight="Bold"
+             TextDecorations="Underline"/>
+        <Run Text="{Binding UseCase.Operations}" />
+        <LineBreak />
+        <LineBreak />
+
+        <Run Text="Operations Concepts: "
+             FontWeight="Bold"
+             TextDecorations="Underline"/>
+        <Run Text="{Binding UseCase.OperationsConcepts}" />
+            </TextBlock>
         </ScrollViewer>
+
+
     </Grid>
 </Window>
